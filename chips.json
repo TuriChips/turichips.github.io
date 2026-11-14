@@ -1,0 +1,10 @@
+[
+  {
+    "name": "TI 74181",
+    "year": 1970,
+    "image": "img/74181.svg",
+    "description": "4-bit ALU on one chip: 16 logic and 16 arithmetic functions. Our dry run, rebuilt from the datasheet; every input combination checked.",
+    "link": "https://github.com/TuriChips/chip-74181#readme",
+    "show": true
+  }
+]
