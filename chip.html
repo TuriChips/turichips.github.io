@@ -8,16 +8,22 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="nav"><div class="wrap">
-  <a class="brand" href="./"><img src="img/favicon.svg" alt="" width="22" height="22">TuriChips</a>
-  <div class="links"><a href="./#chips">All chips</a><a href="https://github.com/TuriChips">GitHub</a></div>
-</div></nav>
-<main class="wrap">
-  <div id="head" class="chip-head"></div>
-  <article id="doc" class="doc"><p>Loading write-up…</p></article>
-  <p id="src" class="srcline"></p>
+<main class="desk">
+  <section class="window">
+    <div class="titlebar"><img src="img/favicon.svg" alt="" width="16" height="16"><span id="wtitle">Chip write-up</span><i class="wb min" aria-hidden="true"></i><i class="wb max" aria-hidden="true"></i><a class="wb close" href="./#chips" aria-label="Close and go back to all chips"></a></div>
+    <div class="menubar"><a href="./#chips">← All chips</a><a href="https://github.com/TuriChips">GitHub</a></div>
+    <div class="wbody">
+      <div id="head" class="chip-head"></div>
+      <article id="doc" class="doc"><p>Loading write-up…</p></article>
+      <p id="src" class="srcline"></p>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap">TuriChips. Every claim links to a log. <a href="https://github.com/TuriChips">GitHub</a></div></footer>
+<nav class="taskbar" aria-label="Site">
+  <a class="start" href="./"><img src="img/favicon.svg" alt="" width="18" height="18">TuriChips</a>
+  <a class="tbtn" href="./#chips">All chips</a><a class="tbtn" href="https://github.com/TuriChips">GitHub</a>
+  <span class="tray">Every claim links to a log</span>
+</nav>
 <script src="chip.js"></script>
 </body>
 </html>
