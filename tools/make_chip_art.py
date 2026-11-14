@@ -19,15 +19,15 @@ s = []
 a = s.append
 a(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="Illustration of the {name} chip in a {pins}-pin DIP package">')
 a('''<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16202e"/><stop offset="1" stop-color="#0b0f17"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f2e6"/><stop offset="1" stop-color="#dcd8c4"/></linearGradient>
 <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2f38"/><stop offset=".5" stop-color="#1c1f26"/><stop offset="1" stop-color="#111318"/></linearGradient>
 <linearGradient id="pin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a8f98"/><stop offset=".4" stop-color="#e8eaee"/><stop offset="1" stop-color="#7d828b"/></linearGradient>
 <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#7aa2ff" stroke-opacity=".07"/></pattern>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#3a6ea5" stroke-opacity=".12"/></pattern>
 </defs>''')
 a(f'<rect width="{W}" height="{H}" fill="url(#bg)"/><rect width="{W}" height="{H}" fill="url(#grid)"/>')
 # shadow
-a(f'<ellipse cx="{W/2}" cy="{by+bh+48}" rx="{bw/2}" ry="12" fill="#000" opacity=".35"/>')
+a(f'<ellipse cx="{W/2}" cy="{by+bh+48}" rx="{bw/2}" ry="12" fill="#000" opacity=".25"/>')
 # pins
 pw, ph = 16, 34
 for side in (0, 1):
