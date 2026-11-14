@@ -30,7 +30,7 @@
         "caption": "Our routed layout of the 4004 on the open sky130 process (OpenROAD and KLayout)."
       }
     ],
-    "description": "The first commercial microprocessor: 46 instructions, 4 bits wide. Rebuilt with its ROM and RAM companions, and tested against the Busicom calculator firmware.",
+    "description": "The first commercial single-chip microprocessor: 46 instructions, 4 bits wide. Rebuilt with its ROM and RAM companions, and tested against the Busicom calculator firmware.",
     "repo": "TuriChips/chip-4004",
     "branch": "main",
     "show": false
