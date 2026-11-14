@@ -72,3 +72,17 @@ h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:0 0 1rem;color:var(-
 .doc figure img,.doc img{max-width:100%;border:1px solid var(--line);background:#fff}
 .doc figcaption{color:var(--muted);font-size:.85rem;margin-top:.4rem}
 @media (max-width:44rem){.chip-head{grid-template-columns:1fr}}
+
+/* home page only: plain white-on-black, no terminal styling (write-up pages keep the theme above) */
+body.home{--fg:#f2f2f2;--dim:#b5b5b5;--muted:#8a8a8a;--amber:#f2f2f2;--line:#2a2a2a;--panel:#111;--link:#f2f2f2;--bg:#000;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body.home::before{display:none}
+body.home .eyebrow::before,body.home .eyebrow::after,body.home .section-title::before,body.home .more::before{content:none}
+body.home .eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+body.home h1{text-shadow:none;font-weight:800;letter-spacing:-.02em}
+body.home .section-title{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+body.home .more::after{content:" \2192"}
+body.home .row{padding:1.4rem .5rem}
+body.home .row:hover{box-shadow:none;background:var(--panel)}
+body.home a:hover{background:none;color:var(--fg)}
+body.home .badge{border-color:var(--muted);color:var(--dim);border-radius:99px;padding:0 .6rem}
+body.home .logo{display:block;width:8rem;height:8rem;image-rendering:auto;margin:0 0 1rem}
