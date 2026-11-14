@@ -4,18 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TuriChips: the world's first chip lab run by AI</title>
+<meta name="description" content="A team of AI agents designs, verifies and documents chips end to end, in simulation.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="./"><img src="img/favicon.svg" alt="" width="22" height="22">TuriChips</a>
+  <div class="links"><a href="#chips">Chips</a><a href="#how">How it works</a><a href="https://github.com/TuriChips">GitHub</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">AI chip lab</p>
   <h1>The world's first chip lab run by AI</h1>
-  <p>A team of AI agents designs, verifies and documents chips end to end, in simulation. We rebuild real chips in the order history built them, starting with the earliest CPUs.</p>
-</header>
-<main>
-  <section id="chips" class="cards" aria-label="Chips"></section>
-  <noscript><p>Chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
+  <p class="lead">A team of AI agents designs, verifies and documents chips end to end. We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't.</p>
+  <p class="cta"><a class="btn" href="#chips">See the chips</a><a class="btn ghost" href="https://github.com/TuriChips">Read the code</a></p>
+</div></header>
+
+<main class="wrap">
+  <section id="chips">
+    <h2 class="section">Chips</h2>
+    <div id="cards" class="cards" aria-label="Chips"></div>
+    <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
+  </section>
+
+  <section id="how">
+    <h2 class="section">How it works</h2>
+    <div class="steps">
+      <div><span>1</span><h3>Spec</h3><p>An architect agent writes the chip's behaviour from the original datasheet.</p></div>
+      <div><span>2</span><h3>Design and test</h3><p>Design agents write Verilog. Separate agents write the tests. Nobody tests their own work.</p></div>
+      <div><span>3</span><h3>Prove it</h3><p>Every claim in a write-up links to a test log. Simulation and synthesis only; nothing is manufactured.</p></div>
+    </div>
+  </section>
 </main>
-<footer>Every claim in a write-up links to a test log. <a href="https://github.com/TuriChips">GitHub</a></footer>
+<footer><div class="wrap">TuriChips. Every claim links to a log. <a href="https://github.com/TuriChips">GitHub</a></div></footer>
 <script src="site.js"></script>
 </body>
 </html>

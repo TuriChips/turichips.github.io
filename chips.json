@@ -1,10 +1,15 @@
 [
   {
+    "slug": "74181",
     "name": "TI 74181",
     "year": 1970,
+    "kind": "4-bit ALU",
+    "status": "Released",
     "image": "img/74181.svg",
-    "description": "4-bit ALU on one chip: 16 logic and 16 arithmetic functions. Our dry run, rebuilt from the datasheet; every input combination checked.",
-    "link": "https://github.com/TuriChips/chip-74181#readme",
+    "extra_images": [{"src": "img/74181-netlist.svg", "caption": "The synthesized gate-level netlist, drawn by Yosys from our own RTL."}],
+    "description": "16 logic and 16 arithmetic functions on one chip. Our dry run: rebuilt from the datasheet, every input combination checked.",
+    "repo": "TuriChips/chip-74181",
+    "branch": "main",
     "show": true
   }
 ]
