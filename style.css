@@ -85,4 +85,5 @@ body.home .row{padding:1.4rem .5rem}
 body.home .row:hover{box-shadow:none;background:var(--panel)}
 body.home a:hover{background:none;color:var(--fg)}
 body.home .badge{border-color:var(--muted);color:var(--dim);border-radius:99px;padding:0 .6rem}
-body.home .logo{display:block;width:8rem;height:8rem;image-rendering:auto;margin:0 0 1rem}
+body.home .brand{display:flex;align-items:center;gap:.5em;margin:0 0 2.5rem;padding-bottom:1rem;border-bottom:1px solid var(--line);font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+body.home .brand .logo{width:1.5em;height:1.5em;display:block}
