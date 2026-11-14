@@ -8,6 +8,8 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   document.title = c.name + ' · TuriChips';
   document.getElementById('wtitle').textContent = c.name + ' write-up';
   const base = 'https://github.com/' + c.repo + '/blob/' + c.branch + '/';
+  const rawBase = 'https://raw.githubusercontent.com/' + c.repo + '/' + c.branch + '/';
+  const rel = h => h.replace(/^\.?\//, ''); // 'x', './x' and '/x' all mean a path in the repo
   const head = document.getElementById('head');
   head.innerHTML = '';
   const img = Object.assign(document.createElement('img'), {src: c.image, alt: 'Illustration of the ' + c.name + ' chip'});
@@ -31,10 +33,15 @@ fetch('chips.json').then(r => r.json()).then(chips => {
     // relative links (logs, spec, source) point at the repo on GitHub
     div.querySelectorAll('a[href]').forEach(l => {
       const href = l.getAttribute('href');
-      if (!/^(https?:|#|mailto:)/.test(href)) l.href = base + href;
+      if (!/^(https?:|#|mailto:)/.test(href)) l.href = base + rel(href);
       if (/^https?:/.test(l.href)) l.rel = 'noopener';
     });
     // log paths written as `code` become links to the repo
+    // images with a repo path (e.g. the layout picture) come from the repo's raw files
+    div.querySelectorAll('img[src]').forEach(im => {
+      const src = im.getAttribute('src');
+      if (!/^(https?:|data:)/.test(src)) im.src = rawBase + rel(src);
+    });
     div.querySelectorAll('code').forEach(cd => {
       if (cd.closest('a,pre')) return;
       const txt = cd.textContent.trim();
