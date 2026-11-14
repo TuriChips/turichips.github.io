@@ -24,20 +24,23 @@ h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:0 0 1rem;color:var(-
 .sr{position:absolute;left:-9999px}
 .section-title::before{content:"$ ls chips/";color:var(--amber)}
 
-/* chip cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.25rem}
-.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit}
-.card:hover{border-color:var(--fg);box-shadow:0 0 14px rgba(125,255,154,.35);background:var(--panel);color:inherit}
-.titlebar{padding:.3rem .7rem;color:var(--bg);background:var(--dim);font-weight:700;font-size:.85rem}
-.titlebar::before{content:"> "}
-.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05) brightness(.85);border-bottom:1px solid var(--line)}
-.card-body{padding:.8rem 1rem 1rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
-.card h3{margin:0;font-size:1.2rem;color:var(--fg)}
-.card p{margin:0;color:var(--dim);font-size:.9rem}
-.meta{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:.6rem}
-.badge{border:1px solid var(--fg);color:var(--fg);padding:0 .5rem;font-size:.7rem;font-weight:700;letter-spacing:.05em}
-.more{margin-top:auto;padding-top:.7rem;color:var(--amber);font-size:.9rem}
-.more::before{content:"$ "}
+/* chip list: one row per chip, small image */
+.cards{display:flex;flex-direction:column}
+.row{display:flex;align-items:center;gap:1.25rem;padding:1.1rem .5rem;border-top:1px dashed var(--line);text-decoration:none;color:inherit}
+.row:last-child{border-bottom:1px dashed var(--line)}
+.row:hover{background:var(--panel);color:inherit;box-shadow:inset 3px 0 0 var(--fg)}
+.row img{width:5.5rem;height:5.5rem;flex:none;object-fit:contain;background:#000;border:1px solid var(--line);padding:.3rem;filter:grayscale(1) contrast(1.05) brightness(.9)}
+.row:hover img{filter:none}
+.row-body{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.row h3{margin:0;font-size:1.25rem;color:var(--fg);display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.row p{margin:0;color:var(--dim);font-size:.9rem;max-width:42rem}
+.meta{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.badge{border:1px solid var(--fg);color:var(--fg);padding:0 .5rem;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.more{color:var(--amber);font-size:.85rem;margin-top:.2rem}
+.more::before{content:"$ cat "}
+.more::after{content:" \2192"}
+.row:hover .more{text-decoration:underline}
+@media (max-width:30rem){.row img{width:4rem;height:4rem}}
 
 /* write-up page nav */
 .menubar{display:flex;gap:1.5rem;margin-bottom:1.5rem;font-size:.9rem}
