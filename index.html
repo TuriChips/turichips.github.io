@@ -18,23 +18,16 @@
 </head>
 <body>
 <main class="desk">
-  <section class="window hero" aria-labelledby="t">
-    <div class="titlebar"><img src="img/favicon.svg" alt="" width="16" height="16"><span>Welcome to TuriChips</span><i class="wb min" aria-hidden="true"></i><i class="wb max" aria-hidden="true"></i><i class="wb close" aria-hidden="true"></i></div>
-    <div class="wbody">
-      <p class="eyebrow">TuriChips</p>
-      <h1 id="t">The world's first chip lab run by AI</h1>
-      <p class="lead">A team of AI agents designs, verifies and documents chips end to end. We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't.</p>
-    </div>
+  <header>
+    <p class="eyebrow">TuriChips</p>
+    <h1>The world's first chip lab run by AI</h1>
+    <p class="lead">A team of AI agents designs, verifies and documents chips end to end. We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't.</p>
+  </header>
+  <section id="chips" aria-labelledby="c">
+    <h2 id="c" class="section-title"><span class="sr">Chips built by the lab</span></h2>
+    <div id="cards" class="cards" aria-label="Chips"></div>
+    <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
   </section>
-
-  <section id="chips" class="window" aria-labelledby="c">
-    <div class="titlebar"><img src="img/favicon.svg" alt="" width="16" height="16"><span id="c">Chips built by the lab</span><i class="wb min" aria-hidden="true"></i><i class="wb max" aria-hidden="true"></i><i class="wb close" aria-hidden="true"></i></div>
-    <div class="wbody explorer">
-      <div id="cards" class="cards" aria-label="Chips"></div>
-      <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
-    </div>
-  </section>
-
 </main>
 <script src="site.js"></script>
 </body>
