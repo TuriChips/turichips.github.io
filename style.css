@@ -74,7 +74,7 @@ h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:0 0 1rem;color:var(-
 @media (max-width:44rem){.chip-head{grid-template-columns:1fr}}
 
 /* home page only: plain white-on-black, no terminal styling (write-up pages keep the theme above) */
-body.home{--fg:#f2f2f2;--dim:#b5b5b5;--muted:#8a8a8a;--amber:#f2f2f2;--line:#2a2a2a;--panel:#111;--link:#f2f2f2;--bg:#000;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body.home,body.chip-page{--fg:#f2f2f2;--dim:#b5b5b5;--muted:#8a8a8a;--amber:#f2f2f2;--line:#2a2a2a;--panel:#111;--link:#f2f2f2;--bg:#000;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 body.home::before{display:none}
 body.home .eyebrow::before,body.home .eyebrow::after,body.home .section-title::before,body.home .more::before{content:none}
 body.home .eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
@@ -87,3 +87,15 @@ body.home a:hover{background:none;color:var(--fg)}
 body.home .badge{border-color:var(--muted);color:var(--dim);border-radius:99px;padding:0 .6rem}
 body.home .brand{display:flex;align-items:center;gap:.5em;margin:0 0 2.5rem;padding-bottom:1rem;border-bottom:1px solid var(--line);font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
 body.home .brand .logo{width:1.5em;height:1.5em;display:block}
+
+/* write-up pages: same white palette; the chip image is left as it was */
+body.chip-page::before{display:none}
+body.chip-page a:hover{background:none;text-decoration:underline}
+body.chip-page h1{text-shadow:none;font-weight:800;letter-spacing:-.02em}
+body.chip-page .doc h2::before{content:none}
+body.chip-page .doc p,body.chip-page .doc li{color:#d8d8d8}
+body.chip-page .doc pre{border-left-color:var(--muted)}
+body.chip-page .doc th{color:var(--fg)}
+body.chip-page .doc blockquote{border-left-color:var(--muted)}
+body.chip-page .badge{border-color:var(--muted);color:var(--dim);border-radius:99px;padding:0 .6rem}
+body.chip-page .doc a:hover code{background:none;color:var(--fg)}
