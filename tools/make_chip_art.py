@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Draws the DIP-package illustration for a chip card. Our own art, no photos.
-Usage: make_chip_art.py <out.svg> <name> <subtitle> <pins> [year-line]"""
-import sys
-out, name, sub, pins = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4])
-tag = sys.argv[5] if len(sys.argv) > 5 else "DESIGNED BY AI"
+Usage: make_chip_art.py tools/chips/<chip>.json
+The JSON gives out, name, subtitle, tag and the pin names in package order
+(pin 1 first; copied from the chip's spec, never from memory). Adding a chip
+means adding a JSON file, not drawing again."""
+import sys, json
+d = json.load(open(sys.argv[1]))
+out, name, sub, tag = d["out"], d["name"], d["subtitle"], d["tag"]
+names = d["pins"]
+pins = len(names)
 per = pins // 2
 W, H = 640, 400
 pitch = 36
@@ -29,7 +34,8 @@ for side in (0, 1):
     for i in range(per):
         x = bx + 28 + i * pitch + (pitch - pw) / 2 - 0
         y = by - ph + 6 if side == 0 else by + bh - 6
-        a(f'<rect x="{x:.1f}" y="{y}" width="{pw}" height="{ph}" rx="3" fill="url(#pin)" stroke="#555a63" stroke-width=".8"/>')
+        n = i + 1 if side == 1 else pins - i   # pin 1 bottom-left, counter-clockwise
+        a(f'<g><title>Pin {n}: {names[n-1]}</title><rect x="{x:.1f}" y="{y}" width="{pw}" height="{ph}" rx="3" fill="url(#pin)" stroke="#555a63" stroke-width=".8"/></g>')
 # body
 a(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="10" fill="url(#body)" stroke="#05070a" stroke-width="2"/>')
 a(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="10" fill="url(#shine)"/>')
