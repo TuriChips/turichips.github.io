@@ -6,7 +6,6 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   const c = chips.find(x => x.slug === slug);
   if (!c) return fail('Unknown chip. Go back to the list of chips.');
   document.title = c.name + ' · TuriChips';
-  document.getElementById('wtitle').textContent = c.name + ' write-up';
   const base = 'https://github.com/' + c.repo + '/blob/' + c.branch + '/';
   const rawBase = 'https://raw.githubusercontent.com/' + c.repo + '/' + c.branch + '/';
   const rel = h => h.replace(/^\.?\//, ''); // 'x', './x' and '/x' all mean a path in the repo
