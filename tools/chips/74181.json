@@ -1,0 +1,9 @@
+{
+  "out": "img/74181.svg",
+  "name": "74181",
+  "subtitle": "4-BIT ALU",
+  "tag": "1970 · REBUILT BY AI",
+  "package": "DIP",
+  "pins": ["B0","A0","S3","S2","S1","S0","Cn","M","F0","F1","F2","GND","F3","A=B","X","Cn+4","Y","B3","A3","B2","A2","B1","A1","VCC"],
+  "source": "chip-74181 docs/spec.md section 2, 'original 24-pin DIP numbering'"
+}
