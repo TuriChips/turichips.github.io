@@ -1,0 +1,9 @@
+{
+  "out": "img/4004.svg",
+  "name": "4004",
+  "subtitle": "4-BIT CPU",
+  "tag": "1971 · REBUILT BY AI",
+  "package": "DIP",
+  "pins": ["D0","D1","D2","D3","VSS","φ1","φ2","SYNC","RESET","TEST","CM-ROM","VDD","CM-RAM3","CM-RAM2","CM-RAM1","CM-RAM0"],
+  "source": "chip-4004 docs/spec.md section 10, pin numbers item: CM-RAM0..3 = 16..13, SYNC 8, TEST 10; D0-D3 1-4, VSS 5, phi1 6, phi2 7, RESET 9, CM-ROM 11, VDD 12"
+}
