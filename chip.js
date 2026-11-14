@@ -7,7 +7,6 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   if (!c) return fail('Unknown chip. Go back to the list of chips.');
   document.title = c.name + ' · TuriChips';
   const base = 'https://github.com/' + c.repo + '/blob/' + c.branch + '/';
-  const rawBase = 'https://raw.githubusercontent.com/' + c.repo + '/' + c.branch + '/';
   const head = document.getElementById('head');
   head.innerHTML = '';
   const img = Object.assign(document.createElement('img'), {src: c.image, alt: 'Illustration of the ' + c.name + ' chip'});
@@ -21,10 +20,13 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   const src = document.getElementById('src');
   const a = Object.assign(document.createElement('a'), {href: base + 'README.md', textContent: 'README.md in ' + c.repo});
   src.append('This write-up is the ', a, ' on GitHub, shown here unchanged.');
-  return fetch(rawBase + 'README.md').then(r => { if (!r.ok) throw 0; return r.text(); }).then(md => {
-    md = md.replace(/^# .*\n/, ''); // title is in the header above
+  // GitHub renders and sanitizes the README for us, so this page needs no third-party code.
+  const api = 'https://api.github.com/repos/' + c.repo + '/readme?ref=' + encodeURIComponent(c.branch);
+  return fetch(api, {headers: {Accept: 'application/vnd.github.html+json'}}).then(r => { if (!r.ok) throw 0; return r.text(); }).then(html => {
     const div = document.createElement('div');
-    div.innerHTML = DOMPurify.sanitize(marked.parse(md));
+    div.innerHTML = html;
+    div.querySelector('.markdown-heading')?.remove(); // title is in the header above
+    div.querySelectorAll('a.anchor').forEach(x => x.remove()); // permalink icons
     // relative links (logs, spec, source) point at the repo on GitHub
     div.querySelectorAll('a[href]').forEach(l => {
       const href = l.getAttribute('href');
