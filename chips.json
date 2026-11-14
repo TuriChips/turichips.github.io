@@ -6,10 +6,33 @@
     "kind": "4-bit ALU",
     "status": "Released",
     "image": "img/74181.svg",
-    "extra_images": [{"src": "img/74181-netlist.svg", "caption": "The synthesized gate-level netlist, drawn by Yosys from our own RTL."}],
+    "extra_images": [
+      {
+        "src": "img/74181-netlist.svg",
+        "caption": "The synthesized gate-level netlist, drawn by Yosys from our own RTL."
+      }
+    ],
     "description": "16 logic and 16 arithmetic functions on one chip. Our dry run: rebuilt from the datasheet, every input combination checked.",
     "repo": "TuriChips/chip-74181",
     "branch": "main",
     "show": true
+  },
+  {
+    "slug": "4004",
+    "name": "Intel 4004",
+    "year": 1971,
+    "kind": "4-bit CPU",
+    "status": "In progress",
+    "image": "img/4004.svg",
+    "extra_images": [
+      {
+        "src": "img/4004-layout.png",
+        "caption": "Our routed layout of the 4004 on the open sky130 process (OpenROAD and KLayout)."
+      }
+    ],
+    "description": "The first commercial microprocessor: 46 instructions, 4 bits wide. Rebuilt with its ROM and RAM companions, and tested against the Busicom calculator firmware.",
+    "repo": "TuriChips/chip-4004",
+    "branch": "main",
+    "show": false
   }
 ]
