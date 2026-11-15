@@ -22,7 +22,7 @@
     "name": "Intel 4004",
     "year": 1971,
     "kind": "4-bit CPU",
-    "status": "In progress",
+    "status": "Released",
     "image": "img/4004.svg",
     "extra_images": [
       {
@@ -33,6 +33,6 @@
     "description": "The first commercial single-chip microprocessor: 46 instructions, 4 bits wide. Rebuilt with its ROM and RAM companions, and tested against the Busicom calculator firmware.",
     "repo": "TuriChips/chip-4004",
     "branch": "main",
-    "show": false
+    "show": true
   }
 ]
