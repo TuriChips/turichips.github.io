@@ -20,11 +20,19 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   t.append(meta, h, p);
   head.append(img, t);
   const src = document.getElementById('src');
-  const a = Object.assign(document.createElement('a'), {href: base + 'README.md', textContent: 'README.md in ' + c.repo});
-  src.append('This write-up is the ', a, ' on GitHub, shown here unchanged.');
-  // GitHub renders and sanitizes the README for us, so this page needs no third-party code.
-  const api = 'https://api.github.com/repos/' + c.repo + '/readme?ref=' + encodeURIComponent(c.branch);
-  return fetch(api, {headers: {Accept: 'application/vnd.github.html+json'}}).then(r => { if (!r.ok) throw 0; return r.text(); }).then(html => {
+  const link = (file, text) => Object.assign(document.createElement('a'), {href: base + file, textContent: text});
+  // The page shows the chip's STORY.md (written for anyone); chips without one yet fall back to the README.
+  // GitHub renders and sanitizes the markdown for us, so this page needs no third-party code.
+  const gh = 'https://api.github.com/repos/' + c.repo;
+  const ref = '?ref=' + encodeURIComponent(c.branch);
+  const get = url => fetch(url, {headers: {Accept: 'application/vnd.github.html+json'}}).then(r => { if (!r.ok) throw 0; return r.text(); });
+  return get(gh + '/contents/STORY.md' + ref).then(html => {
+    src.append('This story is ', link('STORY.md', 'STORY.md in ' + c.repo), ' on GitHub. For engineers: the ', link('README.md', 'technical write-up'), ', with run commands and every log.');
+    return html;
+  }, () => get(gh + '/readme' + ref).then(html => {
+    src.append('This write-up is the ', link('README.md', 'README.md in ' + c.repo), ' on GitHub, shown here unchanged.');
+    return html;
+  })).then(html => {
     const div = document.createElement('div');
     div.innerHTML = html;
     div.querySelector('.markdown-heading')?.remove(); // title is in the header above
