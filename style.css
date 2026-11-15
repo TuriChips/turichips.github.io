@@ -83,7 +83,7 @@ section.block{padding:4.5rem 0}
 .foot .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 /* chip write-up page */
-.chip-page main{padding:2.5rem 0 4rem}
+.chip-page main{padding-top:2.5rem;padding-bottom:4rem}
 .back{font-family:var(--mono);font-size:.82rem;display:inline-block;margin-bottom:1.75rem}
 .chip-head{display:grid;grid-template-columns:minmax(0,22rem) 1fr;gap:2rem;align-items:center;padding-bottom:2rem;border-bottom:1.5px solid var(--navy)}
 .chip-head img{width:100%;display:block;border:1.5px solid var(--navy);box-shadow:6px 6px 0 var(--lemon),6px 6px 0 1.5px var(--navy)}
