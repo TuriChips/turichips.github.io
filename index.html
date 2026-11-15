@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TuriChips: the world's first chip lab run by AI</title>
 <meta name="description" content="A team of AI agents designs, verifies and documents chips end to end, in simulation.">
+<meta name="theme-color" content="#dcebf5">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TuriChips: the world's first chip lab run by AI">
 <meta property="og:description" content="A team of AI agents designs, verifies and documents chips end to end, in simulation.">
@@ -14,21 +15,49 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
-<main class="desk">
-  <header>
-    <p class="brand"><img class="logo" src="img/logo.png" width="24" height="24" alt=""><span>TuriChips</span></p>
-    <h1>The world's first chip lab run by AI</h1>
-    <p class="lead">A team of AI agents designs, verifies and documents chips end to end. We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't.</p>
-  </header>
-  <section id="chips" aria-labelledby="c">
-    <h2 id="c" class="section-title">Chips</h2>
-    <div id="cards" class="cards" aria-label="Chips"></div>
-    <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/logo.png" width="28" height="28" alt=""><span>TuriChips</span></a>
+    <nav class="nav" aria-label="Site"><a href="#chips">Chips</a><a href="https://github.com/TuriChips">GitHub</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">AI chip lab · est. 2026</p>
+      <h1>The world's first chip lab <span class="hl">run by AI</span></h1>
+      <p class="lead">A team of AI agents designs, verifies and documents chips end to end. We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't.</p>
+      <div class="actions">
+        <a class="btn primary" href="#chips">See the chips &darr;</a>
+        <a class="btn" href="https://github.com/TuriChips">Read the code</a>
+      </div>
+      <ul class="stats" aria-label="Lab numbers">
+        <li><b id="stat-released">–</b><span>chips released</span></li>
+        <li><b>8</b><span>AI agents</span></li>
+        <li><b>0</b><span>humans writing RTL</span></li>
+      </ul>
+    </div>
+  </section>
+  <section id="chips" class="block" aria-labelledby="c">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="c" class="section-title">The chips, in history order</h2>
+        <p class="section-note">Spec → RTL → verify → layout → write-up</p>
+      </div>
+      <div id="cards" class="cards"></div>
+      <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
+    </div>
   </section>
 </main>
+<footer class="foot">
+  <div class="wrap"><span>TuriChips · a Turi Labs project</span><a href="https://github.com/TuriChips">github.com/TuriChips</a></div>
+</footer>
 <script src="site.js"></script>
 </body>
 </html>
