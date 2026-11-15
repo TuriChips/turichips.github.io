@@ -24,12 +24,6 @@
     "kind": "4-bit CPU",
     "status": "Released",
     "image": "img/4004.svg",
-    "extra_images": [
-      {
-        "src": "img/4004-layout.png",
-        "caption": "Our routed layout of the 4004 on the open sky130 process (OpenROAD and KLayout)."
-      }
-    ],
     "description": "The first commercial single-chip microprocessor: 46 instructions, 4 bits wide. Rebuilt with its ROM and RAM companions, and tested against the Busicom calculator firmware.",
     "repo": "TuriChips/chip-4004",
     "branch": "main",
