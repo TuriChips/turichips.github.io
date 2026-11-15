@@ -14,7 +14,7 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   const img = Object.assign(document.createElement('img'), {src: c.image, alt: 'Illustration of the ' + c.name + ' chip'});
   const t = document.createElement('div');
   const meta = document.createElement('div'); meta.className = 'meta'; meta.textContent = c.kind + ' · ' + c.year + ' · ';
-  const badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = c.status; meta.append(badge);
+  const badge = document.createElement('span'); badge.className = 'badge' + (/released/i.test(c.status) ? ' released' : ''); badge.textContent = c.status; meta.append(badge);
   const h = document.createElement('h1'); h.textContent = c.name;
   const p = document.createElement('p'); p.className = 'lead'; p.textContent = c.description;
   t.append(meta, h, p);
