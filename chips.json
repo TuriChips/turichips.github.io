@@ -28,5 +28,17 @@
     "repo": "TuriChips/chip-4004",
     "branch": "main",
     "show": true
+  },
+  {
+    "slug": "8080",
+    "name": "Intel 8080",
+    "year": 1974,
+    "kind": "8-bit CPU",
+    "status": "Released",
+    "image": "img/8080.svg",
+    "description": "The 8-bit processor that went into some of the first personal computers: 244 instructions, 64 KB of memory. Rebuilt from Intel's manual and checked with the full 8080 instruction exerciser.",
+    "repo": "TuriChips/chip-8080",
+    "branch": "main",
+    "show": true
   }
 ]
