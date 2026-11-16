@@ -1,0 +1,9 @@
+{
+  "out": "img/8080.svg",
+  "name": "8080",
+  "subtitle": "8-BIT CPU",
+  "tag": "1974 · REBUILT BY AI",
+  "package": "DIP",
+  "pins": ["A10","GND","D4","D5","D6","D7","D3","D2","D1","D0","-5V","RESET","HOLD","INT","φ2","INTE","DBIN","WR","SYNC","+5V","HLDA","φ1","READY","WAIT","A0","A1","A2","+12V","A3","A4","A5","A6","A7","A8","A9","A15","A12","A13","A14","A11"],
+  "source": "chip-8080 docs/spec.md section 10, pinout item (p.5-14 figure, confirmed on the rendered page image)"
+}
