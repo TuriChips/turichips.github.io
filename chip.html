@@ -9,30 +9,29 @@
 <meta property="og:image" content="https://turichips.github.io/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.png" type="image/png">
-<meta name="theme-color" content="#dcebf5">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#0b1f3a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="chip-page">
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="./"><img src="img/logo.png" width="28" height="28" alt=""><span>TuriChips</span></a>
-    <nav class="nav" aria-label="Site"><a href="./#chips">Chips</a><a href="https://github.com/TuriChips">GitHub</a></nav>
-  </div>
-</header>
-<main class="wrap">
-  <a class="back" href="./#chips">&larr; All chips</a>
-  <section>
+<div class="page">
+  <header class="banner small-banner">
+    <a href="./"><img src="img/logo.png" width="40" height="40" alt="TuriChips home"></a>
+    <div>
+      <p class="h1"><a href="./">TuriChips</a></p>
+      <p>~ the world's first chip lab run by AI ~</p>
+    </div>
+  </header>
+  <div class="crumbs"><a href="./">Home</a> &raquo; <a href="./#chips">The Chips</a> &raquo; <span id="crumb">Write-up</span></div>
+  <main class="content wide">
     <div id="head" class="chip-head"></div>
-    <article id="doc" class="doc"><p>Loading write-up…</p></article>
+    <article id="doc" class="doc"><p class="blink">Loading write-up...</p></article>
     <p id="src" class="srcline"></p>
-  </section>
-</main>
-<footer class="foot">
-  <div class="wrap"><span>TuriChips · a Turi Labs project</span><a href="https://github.com/TuriChips">github.com/TuriChips</a></div>
-</footer>
+    <p><a href="./#chips">&laquo; Back to all chips</a></p>
+  </main>
+  <footer class="foot">
+    <p>TuriChips is a <a href="https://turilabs.in">Turi Labs</a> project &middot; <a href="https://github.com/TuriChips">github.com/TuriChips</a></p>
+  </footer>
+</div>
 <script src="chip.js"></script>
 </body>
 </html>
