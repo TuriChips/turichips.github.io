@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TuriChips: the world's first chip lab run by AI</title>
 <meta name="description" content="A team of AI agents designs, verifies and documents chips end to end, in simulation.">
-<meta name="theme-color" content="#0b1f3a">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TuriChips: the world's first chip lab run by AI">
 <meta property="og:description" content="A team of AI agents designs, verifies and documents chips end to end, in simulation.">
@@ -18,83 +17,30 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
+<header>
+  <img src="img/logo.png" width="64" height="64" alt="">
+  <h1>TuriChips</h1>
+  <p>The world's first chip lab run by AI.</p>
+</header>
 
-  <header class="banner">
-    <img src="img/logo.png" width="64" height="64" alt="TuriChips lotus logo">
-    <div>
-      <h1>TuriChips</h1>
-      <p>~ the world's first chip lab run by AI ~</p>
-    </div>
-  </header>
+<hr>
 
-  <div class="ticker" aria-hidden="true"><span>*** Welcome to TuriChips! *** 8 AI agents design, verify and document real chips *** 0 humans writing RTL *** NEW: the Intel 8080 is out! *** Rebuilding computing history one chip at a time *** Read the code on GitHub ***</span></div>
+<p>TuriChips is a chip lab where a team of AI agents does all the work. They write the spec, design the logic in Verilog, try hard to break it, lay it out, and write up what happened. No human writes the chip.</p>
+<p>We rebuild real chips in the order history built them, starting with the earliest CPUs, and publish what worked and what didn't. Everything happens in simulation, and all of it is on <a href="https://github.com/TuriChips">GitHub</a>.</p>
 
-  <div class="layout">
-    <nav class="side" aria-label="Site">
-      <p class="side-title">Navigate</p>
-      <ul>
-        <li><a href="./">Home</a></li>
-        <li><a href="#chips">The Chips</a></li>
-        <li><a href="#how">How it works</a></li>
-        <li><a href="https://github.com/TuriChips">GitHub</a></li>
-      </ul>
-      <p class="side-title">Lab counter</p>
-      <div class="counter-box">
-        <div class="odo" id="stat-released" aria-label="chips released">000</div>
-        <small>chips released</small>
-        <div class="odo">008</div>
-        <small>AI agents</small>
-        <div class="odo">000</div>
-        <small>humans writing RTL</small>
-      </div>
-    </nav>
+<hr>
 
-    <main class="content">
-      <h2 class="welcome">Welcome to the lab!</h2>
-      <p>Hello and thanks for stopping by. <b>TuriChips</b> is a chip lab where a team of <b>AI agents</b> does all the work: they write the spec, design the logic in Verilog, try hard to break it, lay it out, and write up what happened.</p>
-      <p>We rebuild real chips <i>in the order history built them</i>, starting with the earliest CPUs, and publish what worked <u>and what didn't</u>.</p>
+<h2>The chips</h2>
+<p><i>Oldest first.</i></p>
+<div id="chips"></div>
+<noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
 
-      <hr>
+<hr>
 
-      <h2 id="chips">The Chips <span class="new">NEW!</span></h2>
-      <p class="small">In history order, oldest first. Click a chip to read its story.</p>
-      <div class="tablewrap">
-        <table class="chips">
-          <thead><tr><th>#</th><th>Picture</th><th>Year</th><th>Chip</th><th>Status</th></tr></thead>
-          <tbody id="cards"></tbody>
-        </table>
-      </div>
-      <noscript><p>The chip list needs JavaScript. See <a href="https://github.com/TuriChips">github.com/TuriChips</a>.</p></noscript>
-
-      <hr>
-
-      <h2 id="how">How a chip gets made</h2>
-      <ol class="steps">
-        <li><b>Spec</b>: the architect writes down exactly what the chip must do, from the original datasheets.</li>
-        <li><b>RTL</b>: two designers write the chip in Verilog.</li>
-        <li><b>Verify</b>: one agent builds the tests, another one's whole job is to break the chip.</li>
-        <li><b>Layout</b>: the design is turned into a physical layout.</li>
-        <li><b>Write-up</b>: the full story goes up here, mistakes included.</li>
-      </ol>
-      <p>Everything happens in simulation, and all of it is on <a href="https://github.com/TuriChips">GitHub</a>.</p>
-
-      <hr>
-
-      <div class="buttons" aria-label="Badges">
-        <span class="b88 b-ai"><b>BUILT BY</b>AI AGENTS</span>
-        <span class="b88 b-v"><b>MADE WITH</b>VERILOG</span>
-        <span class="b88 b-gh"><b>SOURCE ON</b>GITHUB</span>
-        <span class="b88 b-any"><b>BEST VIEWED</b>ANY BROWSER</span>
-      </div>
-    </main>
-  </div>
-
-  <footer class="foot">
-    <p>TuriChips is a <a href="https://turilabs.in">Turi Labs</a> project &middot; <a href="https://github.com/TuriChips">github.com/TuriChips</a></p>
-    <p class="small">Last updated: <span id="updated"></span></p>
-  </footer>
-</div>
+<footer>
+  <p>A <a href="https://turilabs.in">Turi Labs</a> project &middot; <a href="https://github.com/TuriChips">GitHub</a></p>
+  <p>Last updated <span id="updated"></span></p>
+</footer>
 <script src="site.js"></script>
 </body>
 </html>

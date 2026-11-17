@@ -1,157 +1,37 @@
-/* TuriChips, homepage edition: a late-90s personal site.
-   Fixed-width "paper" on a tiled circuit background, Times + Courier, blue/purple links,
-   beveled boxes. Brand colors stay: navy for the banner and frames, lemon for highlights. */
-:root{
-  --navy:#0b1f3a; --navy-2:#1d3a63;
-  --lemon:#f5e05a;
-  --glacier:#dcebf5;
-  --paper:#fffdf5; --silver:#c0c0c0; --shade:#808080; --hi:#ffffff; --dark:#404040;
-  --link:#0000ee; --visited:#551a8b; --active:#ee0000;
-  --serif:"Times New Roman",Times,Georgia,serif;
-  --mono:"Courier New",Courier,monospace;
-  --ui:Verdana,Tahoma,Geneva,Arial,sans-serif;
-  color-scheme:light;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;padding:18px 12px 40px;color:#000;font:17px/1.45 var(--serif);
-  background-color:var(--glacier);
-  /* tiled background: a tiny circuit board tile, like an old GIF wallpaper */
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23b4cfe2' stroke-width='2'%3E%3Cpath d='M0 12h14l6 6v30M24 0v8l8 8h16M48 36H34l-6-6V24'/%3E%3C/g%3E%3Cg fill='%23b4cfe2'%3E%3Ccircle cx='20' cy='18' r='3'/%3E%3Ccircle cx='32' cy='16' r='3'/%3E%3Crect x='25' y='21' width='6' height='6'/%3E%3C/g%3E%3C/svg%3E");
-}
-a{color:var(--link)}
-a:visited{color:var(--visited)}
-a:active{color:var(--active)}
-a:hover{background:var(--lemon)}
-a:focus-visible{outline:2px dotted #000;outline-offset:2px}
+/* TuriChips: plain on purpose. One centred column, black on white, default links. */
+body{max-width:40em;margin:0 auto;padding:2.5em 1em 3em;background:#fff;color:#111;font:18px/1.6 Georgia,"Times New Roman",Times,serif}
+header{text-align:center}
+header img{image-rendering:pixelated}
+h1{margin:.2em 0 0;font-size:2.2em}
+header p{margin:.2em 0 0;font-style:italic}
+h2{margin:1.2em 0 .2em}
+h3{margin:1.6em 0 0;font-size:1.15em}
+hr{border:0;border-top:1px solid #ccc;margin:2em 0}
+a{color:#00e}
+a:visited{color:#551a8b}
 img{max-width:100%}
-hr{border:0;height:4px;margin:26px 0;border-top:2px groove var(--silver);border-bottom:2px groove var(--silver)}
-.small{font-size:.85em}
-
-/* the page itself: a fixed-width sheet with a 3D frame */
-.page{max-width:800px;margin:0 auto;background:var(--paper);border:3px outset var(--silver);box-shadow:6px 6px 0 rgba(11,31,58,.35)}
-
-/* banner */
-.banner{display:flex;align-items:center;gap:16px;padding:14px 18px;background:var(--navy);color:var(--lemon);border-bottom:3px ridge var(--silver)}
-.banner img{image-rendering:pixelated;background:var(--glacier);border:2px inset var(--silver);flex:none}
-.banner h1,.banner .h1{margin:0;font:bold 46px/1 var(--serif);letter-spacing:1px;color:var(--lemon);text-shadow:3px 3px 0 #000}
-.banner .h1 a{color:inherit;text-decoration:none}
-.banner .h1 a:hover{background:none}
-.banner p{margin:6px 0 0;font:italic 17px var(--serif);color:var(--glacier)}
-.small-banner{padding:10px 14px}
-.small-banner .h1{font-size:30px;text-shadow:2px 2px 0 #000}
-.small-banner p{font-size:14px;margin-top:2px}
-
-/* scrolling ticker, the marquee of old */
-.ticker{overflow:hidden;white-space:nowrap;background:var(--lemon);color:var(--navy);border-bottom:2px solid var(--navy);font:bold 14px/26px var(--mono)}
-.ticker span{display:inline-block;padding-left:100%;animation:marquee 32s linear infinite}
-@keyframes marquee{to{transform:translateX(-100%)}}
-
-/* two columns: nav sidebar + content */
-.layout{display:flex;align-items:stretch}
-.side{flex:0 0 170px;background:var(--silver);border-right:2px solid var(--shade);padding:12px 10px;font:13px/1.4 var(--ui)}
-.side-title{margin:0 0 6px;padding:2px 6px;background:var(--navy);color:#fff;font-weight:bold;font-size:12px}
-.side ul{list-style:none;margin:0 0 18px;padding:0}
-.side li{margin:0 0 5px}
-.side li a{display:block;padding:3px 8px;background:var(--silver);color:#000;text-decoration:none;border:2px outset #fff}
-.side li a:hover{background:var(--lemon)}
-.side li a:active{border-style:inset}
-.side li a::before{content:"\25B8  ";color:var(--navy)}
-.counter-box{text-align:center;background:#fff;border:2px inset #fff;padding:8px 4px}
-.counter-box small{display:block;margin:2px 0 10px;font-size:11px}
-.counter-box small:last-child{margin-bottom:0}
-.odo{display:inline-block;background:#000;color:#3f3;font:bold 20px/1 var(--mono);letter-spacing:4px;padding:4px 4px 4px 8px;border:2px inset var(--shade)}
-
-.content{flex:1;min-width:0;padding:16px 24px 24px}
-.content h2{font:bold 28px/1.15 var(--serif);color:var(--navy);margin:6px 0 10px}
-.content h2.welcome{text-align:center;font-size:30px}
-.new{display:inline-block;vertical-align:middle;font:bold 12px/1 var(--ui);color:#fff;background:#d00;padding:3px 5px;transform:rotate(-6deg);animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.blink{animation:blink 1s steps(1) infinite}
-
-/* the chip table */
-.tablewrap{overflow-x:auto}
-table.chips{width:100%;border-collapse:separate;border-spacing:2px;border:2px outset var(--silver);background:var(--silver);font-size:16px}
-.chips th{background:var(--navy);color:var(--lemon);font:bold 13px var(--ui);padding:4px 6px;text-align:left}
-.chips td{background:#fff;padding:8px;vertical-align:top;border:1px inset var(--silver)}
-.chips tbody tr:nth-child(even) td{background:#f2f7fb}
-.chips .idx,.chips .year{font:bold 15px var(--mono);white-space:nowrap}
-.chips .year{font-size:20px;color:var(--navy)}
-.chips .pic{width:132px}
-.chips .pic img{width:120px;display:block;border:2px solid var(--navy)}
-.chips .pic a:hover{background:none}
-.chips .name{font-weight:bold;font-size:20px}
-.chips .kind{font-style:italic}
-.chips p{margin:4px 0 6px}
-.chips .more{font:bold 13px var(--ui)}
-.chips .status{white-space:nowrap}
-.badge{display:inline-block;font:bold 11px var(--ui);padding:3px 6px;border:2px outset var(--silver);background:var(--silver);text-transform:uppercase}
-.badge.released{background:var(--lemon)}
-.badge.wip{background:repeating-linear-gradient(-45deg,var(--lemon) 0 8px,#000 8px 16px);color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000}
-
-.steps li{margin:4px 0}
-
-/* 88x31 buttons */
-.buttons{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.b88{width:88px;height:31px;display:flex;flex-direction:column;justify-content:center;align-items:center;font:bold 9px/1.05 var(--ui);border:2px outset var(--silver);text-align:center}
-.b88 b{font-size:8px;font-weight:normal}
-.b-ai{background:var(--navy);color:var(--lemon)}
-.b-v{background:#000;color:#3f3}
-.b-gh{background:#fff;color:#000}
-.b-any{background:var(--lemon);color:var(--navy)}
-
-.foot{text-align:center;border-top:3px ridge var(--silver);padding:10px 16px 14px;font-size:15px;background:var(--glacier)}
-.foot p{margin:4px 0}
+.meta{margin:0;color:#555;font-size:.9em}
+.meta+p{margin-top:.3em}
+footer{text-align:center;color:#555;font-size:.9em}
+footer p{margin:.2em 0}
 
 /* chip write-up page */
-.crumbs{font:13px var(--ui);padding:6px 14px;background:var(--silver);border-bottom:2px solid var(--shade)}
-.content.wide{padding:20px 28px 28px}
-.chip-head{display:flex;gap:20px;align-items:flex-start;padding-bottom:16px;border-bottom:4px double var(--navy)}
-.chip-head img{width:230px;flex:none;border:3px ridge var(--silver);background:#fff}
-.chip-head .meta{font:13px var(--ui);color:#333}
-.chip-head h1{font:bold 38px/1.1 var(--serif);margin:6px 0 8px;color:var(--navy)}
-.chip-head .lead{margin:0;font-size:18px}
-.doc{margin-top:20px}
+.back{font-size:.95em}
+.chip-head{text-align:center}
+.chip-head img{display:block;max-width:20em;margin:1em auto}
+.chip-head .meta{margin-top:.5em}
+.chip-head h1{margin:.1em 0 .3em}
+.chip-head .lead{text-align:left}
+.badge{font-size:inherit}
 .doc .markdown-heading h1,.doc>h1{display:none}
-.doc h2{font:bold 25px/1.2 var(--serif);color:var(--navy);margin:30px 0 8px;padding-bottom:3px;border-bottom:1px solid var(--shade)}
-.doc h2:first-child{margin-top:0}
-.doc h3{font:bold 19px var(--serif);margin:20px 0 6px}
-.doc li{margin:3px 0}
-.doc code{font:.92em var(--mono);background:#eee;padding:0 3px}
-.doc pre{font:14px/1.4 var(--mono);background:#000;color:#3f3;padding:12px;overflow-x:auto;border:3px inset var(--silver)}
-.doc pre code{background:none;padding:0;color:inherit;font-size:inherit}
-.doc .tablewrap{margin:14px 0}
-.doc table{border-collapse:separate;border-spacing:2px;border:2px outset var(--silver);background:var(--silver);font-size:15px}
-.doc th,.doc td{background:#fff;padding:4px 8px;text-align:left;vertical-align:top}
-.doc th{background:var(--navy);color:var(--lemon);font:bold 13px var(--ui)}
-.doc blockquote{margin:14px 0;padding:6px 14px;background:#ffffe0;border:1px dashed #999}
-.doc figure{margin:24px 0;text-align:center}
-.doc img{border:2px solid var(--navy);background:#fff}
-.doc figcaption{font:italic 15px var(--serif);margin-top:6px}
-.srcline{font:13px var(--ui);color:#333;border-top:2px groove var(--silver);padding-top:10px;margin:28px 0 10px}
-
-@media (max-width:640px){
-  body{padding:0;font-size:16px}
-  .page{border:0;box-shadow:none}
-  .banner{padding:12px 16px}
-  .banner h1{font-size:34px}
-  .banner img{width:48px;height:48px}
-  .layout{flex-direction:column}
-  .side{flex:none;border-right:0;border-bottom:2px solid var(--shade);padding:10px 16px}
-  .side ul{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
-  .side li{margin:0}
-  .counter-box{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:1fr;align-items:center}
-  .counter-box small,.counter-box small:last-child{margin:2px 0 0}
-  .odo{justify-self:center}
-  .content,.content.wide{padding:14px 16px 18px}
-  .chips .pic{display:none}
-  .chips thead th:nth-child(-n+2),.chips .idx{display:none}
-  .chip-head{flex-direction:column}
-  .chip-head img{width:100%}
-  .crumbs{padding:6px 16px}
-}
-@media (prefers-reduced-motion:reduce){
-  .ticker span{animation:none;padding-left:16px}
-  .new,.blink{animation:none}
-}
+.doc h2{font-size:1.4em}
+.doc code{font-size:.85em}
+.doc pre{font-size:.8em;background:#f4f4f4;padding:.8em 1em;overflow-x:auto}
+.doc pre code{font-size:inherit}
+.tablewrap{overflow-x:auto}
+.doc table{border-collapse:collapse;font-size:.9em}
+.doc th,.doc td{border:1px solid #ccc;padding:.3em .6em;text-align:left;vertical-align:top}
+.doc blockquote{margin:1em 0;padding-left:1em;border-left:3px solid #ccc;color:#444}
+.doc figure{margin:2em 0;text-align:center}
+.doc figcaption{font-style:italic;font-size:.9em;color:#555}
+.srcline{font-size:.9em;color:#555}
