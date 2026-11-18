@@ -1,0 +1,9 @@
+{
+  "out": "img/6502.svg",
+  "name": "6502",
+  "subtitle": "8-BIT CPU",
+  "tag": "1975 · REBUILT BY AI",
+  "package": "DIP",
+  "pins": ["VSS","RDY","φ1","IRQ","N.C.","NMI","SYNC","VCC","AB0","AB1","AB2","AB3","AB4","AB5","AB6","AB7","AB8","AB9","AB10","AB11","VSS","AB12","AB13","AB14","AB15","DB7","DB6","DB5","DB4","DB3","DB2","DB1","DB0","R/W","N.C.","N.C.","φ0","S.O.","φ2","RES"],
+  "source": "MOS MCS6500 Hardware Manual (6500-10A, January 1976), Figure 1.15 'MCS6502 Pinout Designation', printed page 42 (PDF page 55 of the archive.org scan), read from the page image"
+}
