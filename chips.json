@@ -40,5 +40,17 @@
     "repo": "TuriChips/chip-8080",
     "branch": "main",
     "show": true
+  },
+  {
+    "slug": "6502",
+    "name": "MOS 6502",
+    "year": 1975,
+    "kind": "8-bit CPU",
+    "status": "Released",
+    "image": "img/6502.svg",
+    "description": "The cheap 8-bit processor of the Apple II and the Atari 2600: 151 official instructions. Rebuilt from MOS's manuals and checked with the standard functional test and a decimal-mode test.",
+    "repo": "TuriChips/chip-6502",
+    "branch": "main",
+    "show": true
   }
 ]
