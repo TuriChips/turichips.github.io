@@ -5,14 +5,13 @@ fetch('chips.json').then(r => r.json()).then(chips => {
   const root = document.getElementById('chips');
   chips.filter(c => c.show !== false).forEach(c => {
     const href = 'chip.html?chip=' + encodeURIComponent(c.slug);
-    const h = el('h3');
-    const a = el('a', c.name); a.href = href;
-    h.append(c.year + ' · ', a);
-    const meta = el('p', c.kind + (/released/i.test(c.status) ? '' : ' · ' + c.status));
-    meta.className = 'meta';
-    const more = el('a', 'Read the write-up →'); more.href = href;
-    const p = el('p', c.description + ' ');
-    p.append(more);
-    root.append(h, meta, p);
+    const box = el('div'); box.className = 'chip';
+    const meta = el('p', c.year + ' · ' + c.kind); meta.className = 'meta';
+    if (!/released/i.test(c.status)) { const s = el('span', ' · ' + c.status); s.className = 'status'; meta.append(s); }
+    const h = el('h3'); const a = el('a', c.name); a.href = href; h.append(a);
+    const p = el('p', c.description); p.className = 'desc';
+    const more = el('a', 'Read the write-up →'); more.href = href; more.className = 'more';
+    box.append(meta, h, p, more);
+    root.append(box);
   });
 });
