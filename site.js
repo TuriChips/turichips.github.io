@@ -5,18 +5,10 @@ document.getElementById('updated').textContent = modified.toLocaleDateString('en
 document.getElementById('year').textContent = modified.getFullYear();
 fetch('chips.json').then(r => r.json()).then(chips => {
   const root = document.getElementById('chip-list');
-  chips.filter(c => c.show !== false).forEach((c, i) => {
-    const href = 'chip.html?chip=' + encodeURIComponent(c.slug);
+  chips.filter(c => c.show !== false).forEach(c => {
     const box = el('article'); box.className = 'project';
-    const meta = el('p', String(i + 1).padStart(2, '0') + ' · ' + c.year + ' · ' + c.kind); meta.className = 'meta';
-    if (!/released/i.test(c.status)) { meta.append(' · '); const s = el('span', c.status); s.className = 'status'; meta.append(s); }
-    const h = el('h3'); const a = el('a', c.name); a.href = href; h.append(a);
-    const p = el('p', c.description);
-    const links = el('p'); links.className = 'links';
-    const w = el('a', 'Write-up'); w.href = href;
-    const src = el('a', 'Source ↗'); src.href = 'https://github.com/' + c.repo; src.rel = 'noopener';
-    links.append(w, src);
-    box.append(meta, h, p, links);
+    const w = el('a', 'Write-up'); w.href = 'chip.html?chip=' + encodeURIComponent(c.slug);
+    box.append(el('h3', c.name), w);
     root.append(box);
   });
 });
