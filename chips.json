@@ -52,5 +52,17 @@
     "repo": "TuriChips/chip-6502",
     "branch": "main",
     "show": true
+  },
+  {
+    "slug": "z80",
+    "name": "Zilog Z80",
+    "year": 1976,
+    "kind": "8-bit CPU",
+    "status": "Released",
+    "image": "img/z80-layout.png",
+    "description": "The 8-bit CPU of the ZX Spectrum, the Amstrad CPC and the Sega Master System: the 8080 plus a second register set, IX/IY, block moves and bit instructions. Rebuilt from the manuals and checked with the zexdoc instruction exerciser. Our own sky130 layout is on the card; it does not yet meet hold timing.",
+    "repo": "TuriChips/chip-z80",
+    "branch": "main",
+    "show": true
   }
 ]
